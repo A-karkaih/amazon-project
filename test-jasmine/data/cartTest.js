@@ -8,7 +8,7 @@ describe("test suit: addToCart", () => {
       return JSON.stringify([
         {
           productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-          quantity: 2,
+          quantity: 1,
           deliveryOptionId: "1",
         },
       ]);
@@ -19,7 +19,7 @@ describe("test suit: addToCart", () => {
     expect(cart.length).toEqual(1);
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
     expect(cart[0].productId).toEqual("e43638ce-6aa0-4b85-b27f-e1d07eb678c6");
-    expect(cart[0].quantity).toEqual(3);
+    expect(cart[0].quantity).toEqual(2);
   });
   // Test case2
   it("adds a new item to the cart", function () {
