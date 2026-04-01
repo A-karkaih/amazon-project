@@ -481,10 +481,11 @@ export function getProduct(productId) {
 //   },
 // ];
 
+//
 export let products = [];
 export function loadProducts(func) {
-  console.log('load function');
-  
+  console.log("load function");
+
   const xhr = new XMLHttpRequest();
   xhr.addEventListener("load", () => {
     products = JSON.parse(xhr.response);
@@ -495,3 +496,15 @@ export function loadProducts(func) {
   xhr.send();
 }
 
+function loadProductsFetch() {
+  fetch("https://supersimplebackend.dev/products")
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+}
+
+loadProductsFetch();

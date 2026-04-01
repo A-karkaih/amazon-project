@@ -3,6 +3,12 @@ import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 // import "../data/backend-practice.js";
 import { loadProducts } from "../data/products.js";
 
+async function loadPage() {
+  console.log("load page");
+}
+loadPage().then(() => {
+  console.log("next step ");
+});
 new Promise((resolve) => {
   loadProducts(() => {
     resolve();
